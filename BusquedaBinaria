@@ -1,0 +1,45 @@
+#include <iostream>
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	int mat[6];
+	int i,k,j,a;
+	int temp, TAM=5;
+		srand (time(NULL));
+		printf("Vector antes de ordenar \n");
+		printf("\n");
+		for (int i=0;i<6;i++)//para desplazarse por las filas
+        {
+            mat[i]=rand()%100;
+            
+            printf("\t%d",mat[i]);
+ 		}
+ 		 printf("\n\n");
+ 		 
+ 		 
+ 		 for(k=0; k<6; k++){
+		  
+          for(j=k+1; j<6; j++){
+		  
+               if (mat[j] < mat[k])
+               {
+                temp = mat[j];
+                mat[j] = mat[k];
+                mat[k] = mat[j];
+                mat[k]=temp;
+               }
+			}			
+			}
+			printf("Vector despues de ordenar \n");
+			for(a=0; a<6; a++)
+			{
+				
+				printf("\t%d",mat[a]);
+			}
+		
+	return 0;
+}
